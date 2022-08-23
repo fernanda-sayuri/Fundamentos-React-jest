@@ -1,27 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
 
 class App extends Component {
   state = {
-    posts: [
-      {
-        id: 1,
-        title: 'O título 1',
-        body: 'O corpo 1'
-      },
-      {
-        id: 2,
-        title: 'O título 2',
-        body: 'O corpo 2'
-      },
-      {
-        id: 3,
-        title: 'O título 3',
-        body: 'O corpo 3'
-      },
-    ]
+    posts: [ ]
   };
+
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({
+        posts: [
+          {
+            id: 1,
+            title: 'O título 1',
+            body: 'O corpo 1'
+          },
+          {
+            id: 2,
+            title: 'O título 2',
+            body: 'O corpo 2'
+          },
+          {
+            id: 3,
+            title: 'O título 3',
+            body: 'O corpo 3'
+          },
+        ]
+      })
+    }, 5000)
+  }
 
   handlePClick = () => {
     this.setState({ name: 'Júnior' });
@@ -34,7 +41,7 @@ class App extends Component {
   }
 
   render() {
-    const { posts } = this.state;
+    const { posts } = this.state; 
 
     return (
       <div className="App">
